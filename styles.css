@@ -1,1 +1,48 @@
-/* Пиши стили тут */
+.rating {
+    font-size: 48px;
+}
+
+.star {
+    color: lightgray;
+    cursor: pointer;
+    text-shadow: gray 0 0 5px;
+}
+
+/*input[type="radio"] {*/
+/*    display: none;*/
+/*}*/
+
+input[type="radio"]:checked {
+    pointer-events: none;
+    background-color: lightblue;
+}
+
+.rating:has(input[type="radio"]:checked) > .star {
+    color: gold;
+    transition: 200ms;
+}
+
+.rating > input[type="radio"]:checked ~ .star {
+    color: lightgray;
+    transition: 200ms;
+}
+
+.rating > input[type="radio"]:checked + .star {
+    color: gold;
+    transition: 200ms;
+}
+
+.rating:has(input[type="radio"]:hover) > .star {
+    color: gold;
+    transition: 200ms;
+}
+
+.rating > input[type="radio"]:hover ~ .star {
+    color: lightgray;
+    transition: 200ms;
+}
+
+.rating > input[type="radio"]:hover + .star {
+    color: gold;
+    transition: 200ms;
+}
